@@ -75,11 +75,46 @@ import { ColorPicker, ColorStrip } from '@chaoslabz/chromacraft'
   colors={[{ name: 'Red', value: '#ef4444' }, ...]} />
 ```
 
+## Dependencies (ChaosLabz Shared Libs)
+
+| Library | Why |
+|---|---|
+| `@chaoslabz/tooltip` | Popover positioning for picker dropdown, swatch tooltips |
+| `@chaoslabz/escape-stack` | Escape key closes picker without closing parent modal/menu |
+| `@chaoslabz/context-menu` | ColorStrip integration in right-click menus |
+| `@chaoslabz/dialog` | Full picker as modal/popover primitive |
+| `@chaoslabz/ui-events` | Emit color-change events for cross-component sync |
+| `@chaoslabz/shortcut-hints` | Alt-overlay for picker keyboard shortcuts |
+| `@chaoslabz/beacon-ts` | Observability - track picker usage, popular colors |
+
 ## Roadmap
 
-1. Core color utilities (done - skeleton)
-2. ColorStrip component (first consumer: Tactiq labels)
-3. Full ColorPicker (first consumer: Tactiq folder settings)
-4. Eyedropper integration
-5. Gradient mode
-6. Recent/favorites persistence
+### M1 - Core + ColorStrip (v0.1.0)
+- [x] Core color utilities (hex/rgb/hsl, gradient)
+- [ ] ColorStrip component (named swatches, active ring)
+- [ ] Integration: Tactiq label color picker
+- [ ] Depends: `@chaoslabz/tooltip` (swatch names)
+
+### M2 - Full Picker (v0.2.0)
+- [ ] HSL canvas (2D saturation/lightness)
+- [ ] Hue slider (rainbow bar)
+- [ ] Hex/RGB/HSL input fields
+- [ ] Depends: `@chaoslabz/dialog` (popover mode), `@chaoslabz/escape-stack`
+
+### M3 - Advanced Features (v0.3.0)
+- [ ] Eyedropper tool (EyeDropper API)
+- [ ] Recent colors (localStorage persistence)
+- [ ] Favorite colors (pin/unpin)
+- [ ] Depends: `@chaoslabz/beacon-ts` (usage tracking)
+
+### M4 - Gradient + Integration (v0.4.0)
+- [ ] Gradient mode (two-color with stops)
+- [ ] Alpha/opacity slider
+- [ ] Context menu integration (right-click folder color)
+- [ ] Depends: `@chaoslabz/context-menu`, `@chaoslabz/ui-events`
+
+### M5 - Polish (v1.0.0)
+- [ ] Full keyboard navigation
+- [ ] WCAG AA contrast checker built-in
+- [ ] Shortcut hints overlay
+- [ ] Depends: `@chaoslabz/shortcut-hints`
